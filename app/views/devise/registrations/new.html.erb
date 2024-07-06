@@ -1,0 +1,53 @@
+<div class="column sessions">
+  <div class="container sessions-container-outer">
+
+    <div class="sessions-container">
+      <a>
+        <h2>TP Audio Memos</h2>
+      </a>
+      <h1>Create your free account</h1>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <div>
+            <%= f.label :email %>
+          </div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <div>
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+          </div>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <div>
+            <%= f.label :password_confirmation %>
+          </div>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+        </div>
+      <% end %>
+
+      <div class="suggest-sign-upin-container">
+        <span>Already have an account?</span>
+        <%- if controller_name != 'sessions' %>
+          <%= link_to "Log in", new_session_path(resource_name) %><br />
+        <% end %>
+      </div>
+
+      <%#= render "devise/shared/links" %>
+    </div>
+
+  </div>
+</div>

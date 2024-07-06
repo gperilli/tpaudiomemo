@@ -1,0 +1,96 @@
+<div class="light-mode app" id="app" data-controller="lightdark">
+
+  <%= render partial: 'shared/upper_nav' %>
+
+  <div class="column--app">
+
+    <%= render partial: 'shared/side_nav', locals: { current_page: 'account' } %>
+
+    <div class="app-container" data-controller="account">
+      <div class="app-inner">
+
+        <header class="app-header app-header--account">
+          <%= render 'shared/icons/icons_user' %>
+          <div>
+            <h1><%= current_user.name.split.map { |x| x.capitalize}.join(" ") %></h1>
+          </div>
+        </header>
+        
+        <!-- User Profile -->
+        <div class="app-cards-column app-cards app-cards--account">
+          <%= render 'shared/icons/icons_user' %>
+          <div>
+            <div class="text-container">
+              <h3><%= current_user.name.split.map { |x| x.capitalize }.join(' ') %></h3>
+            </div>
+            <div class="button-container">
+              <button class="account-grey-button " data-action="click->account#profilemodal">Edit Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- User Email -->
+        <div class="app-cards-column app-cards app-cards--account">
+          <%= render 'shared/icons/icons_email' %>
+          <div>
+            <div class="text-container">
+              <h3>Email Address</h3>
+              <p><%= current_user.email %></p>
+            </div>
+            <div class="button-container">
+              <button class="account-grey-button " data-action="click->account#emailmodal">Change Email</button>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- User Password -->
+        <div class="app-cards-column app-cards app-cards--account">
+          <%= render 'shared/icons/icons_key' %>
+          <div>
+            <div class="text-container">
+              <h3>Password</h3>
+              <p>********</p>
+            </div>
+            <div class="button-container">
+              <button class="account-grey-button " data-action="click->account#passwordmodal">Change Password</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reset -->
+        <div class="app-cards-column app-cards app-cards--account">
+          <%= render 'shared/icons/icons_eraser' %>
+          <div>
+            <div class="text-container">
+              <h3>Erase All</h3>
+              <p>Erase all memos and audio files.</p>
+            </div>
+            <div class="button-container">
+              <button class="danger-button" data-action="click->account#resetmodal">Erase All</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal-container" id="modalcontainer">
+
+  <!-- Update Profile Modal -->
+  <%= render partial: 'shared/account_page_modals/profile_update_modal' %>
+
+  <!-- Update Email Modal -->
+  <%= render partial: 'shared/account_page_modals/email_update_modal' %>
+
+  <!-- Update Password Modal -->
+  <%= render partial: 'shared/account_page_modals/password_update_modal' %>
+
+  <!-- Reset Account Modal -->
+  <%= render partial: 'shared/account_page_modals/reset_account_modal' %>
+
+</div>

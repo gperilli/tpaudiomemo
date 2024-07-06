@@ -1,0 +1,42 @@
+<nav id="app-nav-upper" data-controller="appnav">
+
+  <div id="app-nav-upper__left-side">
+    <h1>TP Memos</h1>
+  </div>
+
+  <div id="app-nav-upper__right-side">
+    <div class="user-actions-button-container">
+      <button data-action="appnav#toggleDropdown">
+        <%= render 'shared/icons/icons_user' %>
+        <%= current_user.name %>
+      </button>
+
+      <ul id="app-nav-upper-dropdown" class="dropdown-hide">
+        <li>
+          <%= link_to account_path do %>
+            <%= render 'shared/icons/icons_gear' %>
+            Settings
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= render 'shared/icons/icons_logout' %>
+            Log out
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</nav>
+
+<!-- hamburger -->
+<div class="app-nav-upper-burger-container">
+  <div class="hamburger" data-controller="appnav" data-action="click->appnav#mobileMenu">
+    <div>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</div>

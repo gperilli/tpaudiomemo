@@ -1,0 +1,90 @@
+<div class="light-mode app" id="app" data-controller="lightdark">
+
+  <%= render partial: 'shared/upper_nav' %>
+
+  <div class="column--app">
+
+    <%= render partial: 'shared/side_nav', locals: { current_page: 'memos' } %>
+
+    <div class="app-container" data-controller="account">
+      <div class="app-inner" data-controller="memos">
+
+        <div class="new-memo-button-container w-full pb-5">
+          <button data-controller="newwaveform" data-action="click->newwaveform#showNewMemoModal" data-update-or-new="new">
+             <%= render 'shared/icons/icons_plus' %>
+            New Memo
+          </button>
+        </div>
+        
+        <div class="memos-container w-full">
+          <% @memos.each do |memo| %>
+            <div class="memo p-5" style=" min-heibhgt: 100px;">
+              <div class="sound-clips mb-5">
+                <div class='w-100' id="audio-player" 
+                  data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" 
+                  data-audiofilekey="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>">
+                </div>          
+                <div class='flex flex-row relative items-center'>
+                  
+                  <!-- audio play/pause -->
+                  <div class='as-play-button mt-1' data-action="click->memos#playOrPauseAudio">
+                    <svg data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" data-audiofilekey="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" class='as-play-button__svg' viewBox='0 0 300 300'>
+                      <g transform='translate(5, 0)'>
+                        <path id='audio<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>_tri' data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" data-audiofilekey="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" class='as-play-button__triangle' 
+                          d='m 95.514374,224.65227 c -0.05649,-49.76848 -0.112973,-99.53696 -0.16946,-149.30544 43.129016,24.83532 86.258026,49.67064 129.387036,74.50596 -43.07252,24.93316 -86.14505,49.86632 -129.217576,74.79948 z'/>
+                      </g>
+                      <g class='as-play-button__pause-bars' id='audio<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>_bar' transform='translate(50, 45)'>
+                        <rect data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" data-audiofilekey="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" x='115' y='26' ry='8' width='47' height='150' class='AudBtn-PauseRectL' />
+                        <rect data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" data-audiofilekey="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" x='35' y='26' ry='8' width='47' height='150' class='AudBtn-PauseRectR' />
+                      </g>
+                    </svg>
+                  </div>
+                  
+                  <!-- waveform -->
+                  <div class='as-waveform mb-1 w-full h-auto'
+                    data-first-load="true" 
+                    id='audio<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>' 
+                    data-sample_name="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>"
+                    data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>" 
+                    data-audiofilekey="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>">
+                  </div>
+
+                </div>
+              </div>
+              <h3 id="memo-name-<%= memo.id %>"><%= memo.name %></h3>
+              <div id="memo-notes-<%= memo.id %>"><%= memo.notes %></div>
+              <div class="memo-control-buttons">
+                <button data-action="click->memos#bookmarkMemo" class="<%= memo.bookmarked ? 'bookmarked' : 'unbookmarked' %>" id="bookmark-memo-<%= memo.id %>" >
+                  <%= render 'shared/icons/icons_bookmark' %>
+                  <div data-memo-id="<%= memo.id %>"></div>
+                </button>
+                
+                <div>
+                  <button data-controller="newwaveform" data-action="click->memos#showNewMemoModal click->newwaveform#showNewMemoModal" data-memo-id="<%= memo.id %>">
+                    <%= render 'shared/icons/icons_edit' %>
+                    <div data-memo-id="<%= memo.id %>" data-update-or-new="update" data-audio-file-key="<%= memo.audio_file.blob.nil? ? 'kkx6uxfz2qv9ji1oktjg5f0i61hm' : memo.audio_file.blob.key %>"></div>
+                  </button>
+                  <button data-action="click->memos#showDestroyMemoModal click->memos#stageMemoDestroy" data-memo-id="<%= memo.id %>">
+                    <%= render 'shared/icons/icons_bin' %>
+                    <div data-memo-id="<%= memo.id %>"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal-container" id="modalcontainer" data-controller="memorecording">
+
+  <%= render partial: 'shared/memos_page_modals/new_memo_modal' %>
+
+  <%= render partial: 'shared/memos_page_modals/destroy_memo_modal' %>
+
+</div>

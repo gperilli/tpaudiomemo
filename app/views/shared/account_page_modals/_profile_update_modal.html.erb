@@ -1,0 +1,28 @@
+<div class="modal modal--wide" id="profilemodal" data-controller="account">
+  <div class="modal-header">
+    <button data-action="click->account#closemodal">
+      <%= render 'shared/icons/icons_x' %>
+    </button>
+    <h1>Edit Profile</h1>
+  </div>
+
+  <div class="modal-inner">
+    <div id="profilemodal-inner">
+      <div>
+        <%= render 'shared/icons/icons_user' %>
+      </div>
+      <form
+        class="account-forms"
+        method="patch"
+        action="/users"
+      >
+        <div class="field">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="user[name]" value="<%= current_user.name %>" required />
+        </div>
+
+        <input type="submit" value="Save Changes" class="submit-unsubmitted" data-action="click->account#submitProfileUpdate" />
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="modal modal--standard" id="resetmodal" data-controller="account">
+  <div class="modal-inner">
+    <div id="resetmodal-inner">
+      <div id="resetmodal-text-container">
+        <%= render 'shared/icons/icons_warning' %>
+        <div class="modal-header">
+          <h1>Are you sure you want to reset your progress?</h1>
+          <p>
+            All Question Bank progress, Case Study progress, Exam scores, saved items, and Learning Points will be cleared. This action cannot be undone.
+          </p>
+        </div>
+      </div>
+
+      <div id="resetmodal-buttons-container">
+        <button class="account-grey-button" data-action="click->account#closemodal">Cancel</button>
+        <button class="account-reset-button" data-action="click->account#submitAccountReset">Reset Progress</button>
+      </div>
+    </div>
+  </div>
+<div>

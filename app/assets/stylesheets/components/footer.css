@@ -1,0 +1,76 @@
+#home-footer {
+    padding: 60px 0px;
+    background: var(--background-dark-two);
+  }
+  
+  .footer-inner {
+    padding: 0px 20px;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer-bottom {
+    padding-top: 30px;
+  }
+  
+  .footer-bottom > p {
+    color: white;
+  }
+  
+  .footer-left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  
+  .footer-left-side > h2 {
+    color: white;
+    font-weight: 700;
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin-bottom: 40px;
+  }
+  
+  .footer-left-side > .sign-up-button {
+    color: white;
+    font-size: 1rem;
+    margin-right: 0px;
+    border: 2px solid white;
+    padding: 8px 20px;
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: block;
+  }
+  
+  .footer-right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  
+  .footer-right-side > a {
+    color: white;
+  }
+  
+  
+  @media (max-width: 1200px) {
+  }
+  
+  @media (max-width: 1024px) {
+  }
+  
+  @media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-right-side {
+    flex-direction: row;
+    justify-content: end;
+  }
+  }
+  
+  @media (max-width: 480px) {
+  }

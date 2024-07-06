@@ -1,0 +1,50 @@
+<nav class="app-nav-side">
+  <ul>
+    <li>
+      <%= link_to memos_path, class: "#{current_page == 'memos' ? 'selected' : '' }" do %>
+        <%= render 'shared/icons/icons_edit' %>  
+        <span>Memos</span>
+      <% end %>
+    </li>
+    <li>
+    <%= link_to bookmarks_path, class: "#{current_page == 'favorites' ? 'selected' : '' } bookmarked" do %>
+        <%= render 'shared/icons/icons_bookmark' %>
+        <span>Bookmarked</span>
+      <% end %>
+    </li>
+
+    <hr>
+    
+    <li>
+      <%= link_to account_path, class: "#{current_page == 'account' ? 'selected' : '' }" do %>
+        <%= render 'shared/icons/icons_user' %>
+        Account
+      <% end %>
+    </li>
+
+    <hr>
+
+    <li>
+      <%= link_to destroy_user_session_path do %>
+        <%= render 'shared/icons/icons_logout' %>
+        Log Out
+      <% end %>
+
+    </li>
+
+    <% if current_user.admin %>
+      <li>
+        <%= link_to admin_edithomepage_path, class: "#{current_page == 'homepageedit' ? 'selected' : '' }" do %>
+          <%= render 'shared/icons/icons_gear' %>
+          Edit Home Page
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <footer>
+    <button>
+      <%= render 'shared/icons/icons_moon' %>
+    </button>
+  </footer>
+</nav>
