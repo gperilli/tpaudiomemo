@@ -22,7 +22,7 @@ end
 # )
 # p "DONE"
 
-admin = User.where(admin: true)
+admin = User.where(admin: true)[0]
 
 
 p "Creating Dev Memos..."
