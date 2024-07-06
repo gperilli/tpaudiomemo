@@ -22,6 +22,8 @@ end
 # )
 # p "DONE"
 
+admin = User.where(admin: true)
+
 
 p "Creating Dev Memos..."
 dev_audio_files = [
