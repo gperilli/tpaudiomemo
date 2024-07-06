@@ -270,16 +270,15 @@ export default class extends Controller {
     formData.append('memo[notes]', memoFormNotesInputValue);
 
     let submitTypeIsUpdate = false;
-    console.log(e.target.dataset.memoId);
-    if (e.target.dataset.memoId != undefined) {
+    if (e.target.dataset.memoId == "undefined") {
+      console.log("NEW");
+      submitTypeIsUpdate = false;
+    } else {
       console.log("UPDATE");
       submitTypeIsUpdate = true;
       const bookmarked = document.querySelector(`#bookmark-memo-${e.target.dataset.memoId}`).className == "bookmarked" ? true : false;
       console.log(bookmarked);
       formData.append('memo[bookmarked]', bookmarked);
-    } else {
-      console.log("CREATE");
-      submitTypeIsUpdate = false;
     }
     
     // set spinner
