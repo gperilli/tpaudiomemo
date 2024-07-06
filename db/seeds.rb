@@ -24,9 +24,6 @@ p "DONE"
 
 
 p "Creating Dev Memos..."
-
-
-
 dev_audio_files = [
   "https://upload.wikimedia.org/wikipedia/commons/0/09/Harry_S._Truman_1948_Victory_speech.ogg",
   "https://upload.wikimedia.org/wikipedia/commons/3/39/From_the_Battlefields_of_France.ogg",
@@ -45,6 +42,7 @@ dev_audio_files.count.times do |n|
   )
 
   new_memo.audio_file.attach(io: URI.open(dev_audio_files[n]), filename: "sample.ogg", content_type: 'audio/ogg')
+  p new_memo
 end
 
 p "DONE"
