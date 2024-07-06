@@ -65,7 +65,7 @@ class MemosController < ApplicationController
       # Use blank audio
       new_memo = Memo.new(memo_params)
       new_memo.audio_file.attach(
-          io: URI.open("https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm"), 
+          io: URI.open("https://res.cloudinary.com/#{ENV['CLOUDINARY_CLOUD_NAME']}/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm"), 
           filename: "output.mp3", 
           content_type: 'audio/mp3',
         )
