@@ -13,14 +13,14 @@ if User.exists? && Rails.env.development?
   User.destroy_all
 end
 
-p "Creating Admin User..."
-admin = User.create!(
-  email: "admin@testmail.com",
-  password: "test-1234",
-  name: "admin user",
-  admin: true
-)
-p "DONE"
+# p "Creating Admin User..."
+# admin = User.create!(
+#   email: "admin@testmail.com",
+#   password: "test-1234",
+#   name: "admin user",
+#   admin: true
+# )
+# p "DONE"
 
 
 p "Creating Dev Memos..."
