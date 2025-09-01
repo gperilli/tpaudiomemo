@@ -72,26 +72,26 @@ export default class extends Controller {
             container.files;
 
           const audioWaveForm = `
-            <div class='w-100' id="audio-player" 
-              data-audiosource="${audioURL}" 
+            <div class='w-100' id="audio-player"
+              data-audiosource="${audioURL}"
               data-audiofilekey="voicemailrecording">
               <div class='flex flex-row relative items-center mt-6'>
-                
+
                 <!-- audio play/pause -->
                 <div class='as-play-button mt-1' data-controller="newwaveform" data-action="click->newwaveform#playOrPauseAudio">
-                  <svg class='as-play-button__svg' viewBox='0 0 300 300' 
-                    data-audiosource="${audioURL}" 
+                  <svg class='as-play-button__svg' viewBox='0 0 300 300'
+                    data-audiosource="${audioURL}"
                     data-audiofilekey="voicemailrecording">
                     <g transform='translate(5, 0)'>
-                      <path id="audiovoicemailrecording_tri" class='as-play-button__triangle' 
+                      <path id="audiovoicemailrecording_tri" class='as-play-button__triangle'
                         data-audiosource="${audioURL}"
-                        data-audiofilekey="voicemailrecording" 
+                        data-audiofilekey="voicemailrecording"
                         d='m 95.514374,224.65227 c -0.05649,-49.76848 -0.112973,-99.53696 -0.16946,-149.30544 43.129016,24.83532 86.258026,49.67064 129.387036,74.50596 -43.07252,24.93316 -86.14505,49.86632 -129.217576,74.79948 z'/>
                     </g>
                     <g class='as-play-button__pause-bars' id='audiovoicemailrecording_bar' transform='translate(50, 45)'>
                       <rect
                         id="newOrUpdatePlayPauseButoonBarOne"
-                        data-audiosource="${audioURL}" 
+                        data-audiosource="${audioURL}"
                         data-audiofilekey="voicemailrecording" x='115' y='26' ry='8' width='47' height='150' class='AudBtn-PauseRectL' />
                       <rect
                         id="newOrUpdatePlayPauseButoonBarTwo"
@@ -100,10 +100,10 @@ export default class extends Controller {
                     </g>
                   </svg>
                 </div>
-                
+
                 <!-- waveform -->
-                <div class='new-as-waveform mb-1 w-full h-auto' 
-                  data-first-load="true"  
+                <div class='new-as-waveform mb-1 w-full h-auto'
+                  data-first-load="true"
                   data-sample_name="voicemailrecording"
                   data-audiosource="${audioURL}"
                   id='audiovoicemailrecording'
