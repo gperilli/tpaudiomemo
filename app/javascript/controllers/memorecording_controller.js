@@ -1,14 +1,12 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 let playPauseStatObj = new Object();
 
 export default class extends Controller {
-
   waveForms = {};
   blob;
 
   connect() {
-    console.log("memorecord/update controller");
 
     // Set up basic variables for app
     const recordButton = document.querySelector("#record-button");
@@ -18,7 +16,6 @@ export default class extends Controller {
     const canvas = document.querySelector(".visualizer");
     const mainSection = document.querySelector(".main-controls");
     let recordStatus = "stopped";
-    
 
     // Disable stop button while not recording
     stop.disabled = true;
@@ -29,47 +26,50 @@ export default class extends Controller {
 
     // Main block for doing the audio recording
     if (navigator.mediaDevices.getUserMedia) {
-      console.log("The mediaDevices.getUserMedia() method is supported.");
 
       const constraints = { audio: true };
       let chunks = [];
 
       let onSuccess = function (stream) {
-        document.querySelector('#microphone-status').innerHTML = "microphone active"
-        document.querySelector('#microphone-status').classList.remove('inactive');
-        document.querySelector('#microphone-status').classList.add('active');
-        
+        document.querySelector("#microphone-status").innerHTML =
+          "microphone active";
+        document
+          .querySelector("#microphone-status")
+          .classList.remove("inactive");
+        document.querySelector("#microphone-status").classList.add("active");
+
         const mediaRecorder = new MediaRecorder(stream);
 
         visualize(stream);
 
         recordButton.onclick = () => startRecording(mediaRecorder);
         stopButton.onclick = () => stopRecording(mediaRecorder);
-        stopOrRecordButton.onclick = function() {
+        stopOrRecordButton.onclick = function () {
           if (recordStatus == "stopped") {
             startRecording(mediaRecorder);
           } else {
             stopRecording(mediaRecorder);
           }
-        }
+        };
 
         mediaRecorder.onstop = function (e) {
-          console.log("Last data to read (after MediaRecorder.stop() called).");
 
-          soundClips.innerHTML = '';
+          soundClips.innerHTML = "";
           const audio = document.createElement("audio");
           this.blob = new Blob(chunks, { type: mediaRecorder.mimeType });
-          
+
           chunks = [];
           const audioURL = window.URL.createObjectURL(this.blob);
           audio.src = audioURL;
 
-
-          let file = new File([this.blob], "voicemail.webm",{type:"audio/webm", lastModified:new Date().getTime()});
+          let file = new File([this.blob], "voicemail.webm", {
+            type: "audio/webm",
+            lastModified: new Date().getTime(),
+          });
           let container = new DataTransfer();
           container.items.add(file);
-          document.querySelector("#memo-form-audiofile-input").files = container.files;
-
+          document.querySelector("#memo-form-audiofile-input").files =
+            container.files;
 
           const audioWaveForm = `
             <div class='w-100' id="audio-player" 
@@ -111,43 +111,44 @@ export default class extends Controller {
                 </div>
               </div>
             </div>
-          ` 
-          soundClips.insertAdjacentHTML('beforeend', audioWaveForm);
-
+          `;
+          soundClips.insertAdjacentHTML("beforeend", audioWaveForm);
         };
 
-        
         mediaRecorder.ondataavailable = function (e) {
           chunks.push(e.data);
         };
       };
 
       let onError = function (err) {
-        console.log("The following error occured: " + err);
       };
 
       navigator.mediaDevices.getUserMedia(constraints).then(onSuccess, onError);
     } else {
-      console.log("MediaDevices.getUserMedia() not supported on your browser!");
+      // console.log("MediaDevices.getUserMedia() not supported on your browser!");
     }
 
     function startRecording(mediaRecorder) {
       recordStatus = "recording";
       mediaRecorder.start();
 
-      document.querySelector('#initial-recording-output-overlay').classList.add("overlayed");
-      document.querySelector('#initial-recording-output-overlay').classList.remove("reveal");
-      
-      document.querySelector('#microphone-status').innerHTML = "recording..."
-      document.querySelector('#microphone-status').classList.remove('active');
-      document.querySelector('#microphone-status').classList.add('recording');
+      document
+        .querySelector("#initial-recording-output-overlay")
+        .classList.add("overlayed");
+      document
+        .querySelector("#initial-recording-output-overlay")
+        .classList.remove("reveal");
+
+      document.querySelector("#microphone-status").innerHTML = "recording...";
+      document.querySelector("#microphone-status").classList.remove("active");
+      document.querySelector("#microphone-status").classList.add("recording");
 
       stopButton.disabled = false;
       recordButton.disabled = true;
 
       stopButton.classList.remove("button-inactive");
       stopButton.classList.add("button-stoprecord");
-      
+
       recordButton.classList.remove("button-record");
       recordButton.classList.add("button-inactive");
       recordButton.innerHTML = "Recording";
@@ -156,16 +157,22 @@ export default class extends Controller {
     function stopRecording(mediaRecorder) {
       recordStatus = "stopped";
       mediaRecorder.stop();
-      
-      document.querySelector('#initial-recording-output-overlay').classList.remove("overlayed");
-      document.querySelector('#initial-recording-output-overlay').classList.add("reveal");
-      // 
-      soundClips.innerHTML = '';
 
+      document
+        .querySelector("#initial-recording-output-overlay")
+        .classList.remove("overlayed");
+      document
+        .querySelector("#initial-recording-output-overlay")
+        .classList.add("reveal");
+      //
+      soundClips.innerHTML = "";
 
-      document.querySelector('#microphone-status').innerHTML = "microphone active"
-      document.querySelector('#microphone-status').classList.remove('recording');
-      document.querySelector('#microphone-status').classList.add('active');
+      document.querySelector("#microphone-status").innerHTML =
+        "microphone active";
+      document
+        .querySelector("#microphone-status")
+        .classList.remove("recording");
+      document.querySelector("#microphone-status").classList.add("active");
 
       stopButton.disabled = true;
       recordButton.disabled = false;
@@ -176,8 +183,7 @@ export default class extends Controller {
       recordButton.innerHTML = "Record";
       recordButton.classList.remove("button-inactive");
       recordButton.classList.add("button-record");
-
-    };
+    }
 
     function visualize(stream) {
       if (!audioCtx) {
@@ -202,7 +208,6 @@ export default class extends Controller {
         const centerY = HEIGHT / 2;
         const baseRadius = 0.75 * Math.min(centerX, centerY);
 
-
         requestAnimationFrame(draw);
 
         analyser.getByteTimeDomainData(dataArray);
@@ -220,132 +225,133 @@ export default class extends Controller {
         let angle = 0;
 
         for (let i = 0; i < bufferLength; i++) {
-            let v = dataArray[i] / 128.0; 
-            let r = (0.5 + (v * 0.25)) * Math.min(centerX, centerY);
+          let v = dataArray[i] / 128.0;
+          let r = (0.5 + v * 0.25) * Math.min(centerX, centerY);
 
-            let x = centerX + r * Math.cos(angle);
-            let y = centerY + r * Math.sin(angle);
+          let x = centerX + r * Math.cos(angle);
+          let y = centerY + r * Math.sin(angle);
 
-            if (i === 0) {
-                canvasCtx.moveTo(x, y);
-            } else {
-                canvasCtx.lineTo(x, y);
-            }
+          if (i === 0) {
+            canvasCtx.moveTo(x, y);
+          } else {
+            canvasCtx.lineTo(x, y);
+          }
 
-            angle += angleStep;
+          angle += angleStep;
         }
 
         canvasCtx.closePath();
         canvasCtx.stroke();
-    }
+      }
 
-
-    const myFile = new File(['Hello World!'], 'myFile.txt', {
-      type: 'text/plain',
-      lastModified: new Date(),
-  });
+      const myFile = new File(["Hello World!"], "myFile.txt", {
+        type: "text/plain",
+        lastModified: new Date(),
+      });
     }
 
     window.onresize = function () {
       canvas.width = mainSection.offsetWidth;
     };
-    
   }
 
   submitAudio(e) {
-    console.log("submitAudio");
-    
-    e.preventDefault()
+
+    e.preventDefault();
 
     let formData = new FormData();
-    let memoFormNameInputValue = document.querySelector("#memo-form-name-input").value
-    const memoFormNotesInputValue = document.querySelector("#memo-form-notes-input").value
-    if (memoFormNameInputValue == '' || memoFormNameInputValue == null) {
+    let memoFormNameInputValue = document.querySelector(
+      "#memo-form-name-input"
+    ).value;
+    const memoFormNotesInputValue = document.querySelector(
+      "#memo-form-notes-input"
+    ).value;
+    if (memoFormNameInputValue == "" || memoFormNameInputValue == null) {
       const today = new Date();
-      const formattedDate = today.toISOString().split('T')[0];
+      const formattedDate = today.toISOString().split("T")[0];
       memoFormNameInputValue = formattedDate;
     }
 
-    formData.append('memo[name]', memoFormNameInputValue);
-    formData.append('memo[notes]', memoFormNotesInputValue);
+    formData.append("memo[name]", memoFormNameInputValue);
+    formData.append("memo[notes]", memoFormNotesInputValue);
 
     let submitTypeIsUpdate = false;
     if (e.target.dataset.memoId == "undefined") {
-      console.log("NEW");
       submitTypeIsUpdate = false;
     } else {
-      console.log("UPDATE");
       submitTypeIsUpdate = true;
-      const bookmarked = document.querySelector(`#bookmark-memo-${e.target.dataset.memoId}`).className == "bookmarked" ? true : false;
-      console.log(bookmarked);
-      formData.append('memo[bookmarked]', bookmarked);
+      const bookmarked =
+        document.querySelector(`#bookmark-memo-${e.target.dataset.memoId}`)
+          .className == "bookmarked"
+          ? true
+          : false;
+      formData.append("memo[bookmarked]", bookmarked);
     }
-    
+
     // set spinner
-    const memoFormAudioFileInput = document.querySelector("#memo-form-audiofile-input").files;
+    const memoFormAudioFileInput = document.querySelector(
+      "#memo-form-audiofile-input"
+    ).files;
     if (memoFormAudioFileInput.length < 1) {
       // no audio recorded
     } else {
-      formData.append('memo[audio_file]', memoFormAudioFileInput[0]);
+      formData.append("memo[audio_file]", memoFormAudioFileInput[0]);
     }
 
     document.querySelector("#memo-submit-button").disabled = true;
-    document.querySelector("#memo-submit-button-text").innerHTML = "Saving..."
+    document.querySelector("#memo-submit-button-text").innerHTML = "Saving...";
     document.querySelector("#spinner").classList.remove("hidden");
 
     if (submitTypeIsUpdate == true) {
       fetch(`/memos/${e.target.dataset.memoId}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: {
-          'X-CSRF-Token': document.querySelector("[name='csrf-token']").content,
+          "X-CSRF-Token": document.querySelector("[name='csrf-token']").content,
         },
         body: formData,
       })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        console.log("success");
-        document.querySelector("#memo-submit-button-text").innerHTML = "Saved"
-        document.querySelector(".spinner").classList.add("hidden");
- 
-        setTimeout(function(){ 
-          location.reload();
-        }, 2000);
-        
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        document.querySelector("#memo-submit-button-text").innerHTML = "Error"
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          document.querySelector("#memo-submit-button-text").innerHTML =
+            "Saved";
+          document.querySelector(".spinner").classList.add("hidden");
+
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.querySelector("#memo-submit-button-text").innerHTML =
+            "Error";
+        });
     } else {
       fetch(`/memos`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'X-CSRF-Token': document.querySelector("[name='csrf-token']").content,
+          "X-CSRF-Token": document.querySelector("[name='csrf-token']").content,
         },
         body: formData,
       })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        console.log("success");
-        document.querySelector("#memo-submit-button-text").innerHTML = "Saved"
-        document.querySelector(".spinner").classList.add("hidden");
- 
-        setTimeout(function(){ 
-          location.reload();
-        }, 2000);
-        
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        document.querySelector("#memo-submit-button-text").innerHTML = "Error"
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          document.querySelector("#memo-submit-button-text").innerHTML =
+            "Saved";
+          document.querySelector(".spinner").classList.add("hidden");
+
+          setTimeout(function () {
+            location.reload();
+          }, 2000);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          document.querySelector("#memo-submit-button-text").innerHTML =
+            "Error";
+        });
     }
-
-
   }
-
 }
