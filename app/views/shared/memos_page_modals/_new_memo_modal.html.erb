@@ -1,5 +1,5 @@
 <div class="modal modal--wide" id="newmemomodal">
-    
+
   <div class="modal-header">
     <button data-controller="newwaveform" data-action="click->newwaveform#closeNewMemoModal" style="position: relative;">
       <%= render 'shared/icons/icons_x' %>
@@ -12,7 +12,7 @@
       <div class="flex flex-col flex-grow items-center relative">
 
         <!-- Audio Feed Feedback -->
-        <section class="main-controls flex flex-col w-full items-center">  
+        <section class="main-controls flex flex-col w-full items-center">
           <div class="relative h-72 w-full flex flex-row justify-center">
             <canvas class="visualizer relative justify-center" width="300px" height="300px"></canvas>
             <div class="absolute top-0 h-full flex flex-row items-center justify-center">
@@ -37,17 +37,17 @@
             <div id="initial-recording-output-overlay" class="recording-output-overlay overlayed">
             </div>
             <div class="recording-output">
-              <div class='w-100' id="audio-player" 
-                data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm" 
+              <div class='w-100' id="audio-player"
+                data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm"
                 data-audiofilekey="kkx6uxfz2qv9ji1oktjg5f0i61hm">
-              </div>          
+              </div>
               <div class='flex flex-row relative items-center mt-6'>
-                
+
                 <!-- audio play/pause -->
                 <div class='as-play-button mt-1' data-controller="newwaveform" data-action="click->newwaveform#playOrPauseAudio">
                   <svg data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm" data-audiofilekey="kkx6uxfz2qv9ji1oktjg5f0i61hm" class='as-play-button__svg' viewBox='0 0 300 300'>
                     <g transform='translate(5, 0)'>
-                      <path id='audiovoicemailrecording_tri' data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm" data-audiofilekey="kkx6uxfz2qv9ji1oktjg5f0i61hm" class='as-play-button__triangle' 
+                      <path id='audiovoicemailrecording_tri' data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm" data-audiofilekey="kkx6uxfz2qv9ji1oktjg5f0i61hm" class='as-play-button__triangle'
                         d='m 95.514374,224.65227 c -0.05649,-49.76848 -0.112973,-99.53696 -0.16946,-149.30544 43.129016,24.83532 86.258026,49.67064 129.387036,74.50596 -43.07252,24.93316 -86.14505,49.86632 -129.217576,74.79948 z'/>
                     </g>
                     <g class='as-play-button__pause-bars' id='audiovoicemailrecording_bar' transform='translate(50, 45)'>
@@ -56,13 +56,13 @@
                     </g>
                   </svg>
                 </div>
-                
+
                 <!-- waveform -->
                 <div class='new-as-waveform mb-1 w-full h-auto'
-                  data-first-load="true" 
-                  id='audiovoicemailrecording' 
+                  data-first-load="true"
+                  id='audiovoicemailrecording'
                   data-sample_name="kkx6uxfz2qv9ji1oktjg5f0i61hm"
-                  data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm" 
+                  data-audiosource="https://res.cloudinary.com/gperilli/video/upload/v1/development/kkx6uxfz2qv9ji1oktjg5f0i61hm"
                   data-audiofilekey="kkx6uxfz2qv9ji1oktjg5f0i61hm">
                 </div>
               </div>
@@ -75,15 +75,15 @@
           <div class="max-w-lg w-full max-w-500 flex flex-col items-center">
 
             <div class="w-full text-right relative z-20 mb-5">
-              <span class="text-xs w-full hidden text-calleo_pink" id="voicemail-audio-validation-message">Please record a message.</span>    
+              <span class="text-xs w-full hidden text-calleo_pink" id="voicemail-audio-validation-message">Please record a message.</span>
             </div>
 
             <form id="voicemail-submit-form" class="flex flex-col items-center w-full" enctype="multipart/form-data" action="/memo" accept-charset="UTF-8" method="post">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <div class="flex flex-col items-center w-full">
                 <div class="mb-5 w-full">
-                  
-                  <input type="text" name="memo[name]" placeholder="<%= Date.today.strftime("%Y-%m-%d") %>" class="w-full mb-5" id="memo-form-name-input" >  
+
+                  <input type="text" name="memo[name]" placeholder="<%= Date.today.strftime("%Y-%m-%d") %>" class="w-full mb-5" id="memo-form-name-input" >
 
                   <div class="mb-5 w-full">
                     <textarea type="text" name="memo[notes]" rows="4" cols="50" placeholder="Enter your notes..." class="w-full" id="memo-form-notes-input"></textarea>
@@ -91,9 +91,9 @@
                 </div>
 
                 <div>
-                  <input type="file" name="memo[audio_file]" class="hidden" id="memo-form-audiofile-input" accept="audio/*" >            
+                  <input type="file" name="memo[audio_file]" class="hidden" id="memo-form-audiofile-input" accept="audio/*" >
                 </div>
-                
+
                 <button class="tpamemos-medbutton  px-4 flex flex-row items-center justify-center" id="memo-submit-button" data-action="click->memorecording#submitAudio" >
                   <span id="memo-submit-button-text">Save Memo</span>
                   <div id="spinner" class="spinner hidden"></div>
@@ -106,5 +106,5 @@
       </div>
     </div>
   </div>
-    
+
 </div>

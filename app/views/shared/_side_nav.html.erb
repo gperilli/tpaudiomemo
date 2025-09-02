@@ -2,7 +2,7 @@
   <ul>
     <li>
       <%= link_to memos_path, class: "#{current_page == 'memos' ? 'selected' : '' }" do %>
-        <%= render 'shared/icons/icons_edit' %>  
+        <%= render 'shared/icons/icons_edit' %>
         <span>Memos</span>
       <% end %>
     </li>
@@ -14,7 +14,7 @@
     </li>
 
     <hr>
-    
+
     <li>
       <%= link_to account_path, class: "#{current_page == 'account' ? 'selected' : '' }" do %>
         <%= render 'shared/icons/icons_user' %>
