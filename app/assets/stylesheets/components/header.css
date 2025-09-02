@@ -1,5 +1,4 @@
 header {
-
 }
 
 #home-header {
@@ -11,7 +10,6 @@ header {
   height: auto;
   z-index: 50;
   overflow: hidden;
-  
   height: 4.5rem;
   transition: 0.4s ease-out;
 }
@@ -19,7 +17,6 @@ header {
 #home-header > .container {
   height: 100%;
 }
-
 
 .nav-inner {
   display: flex;
@@ -38,14 +35,16 @@ header {
 .nav-inner > ul > li > a {
   color: var(--dark-mode-grey-text);
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   margin-right: 20px;
   font-weight: 500;
 }
 
 .nav-inner > ul > li > a:hover {
-text-decoration: underline;
-cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .nav-right-side {
@@ -53,14 +52,13 @@ cursor: pointer;
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  
 }
 
 .nav-right-side > #dashboard-button {
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
   border-radius: 1.5rem;
 }
 
@@ -69,22 +67,24 @@ padding: 10px 15px;
 }
 
 .nav-right-side > #dashboard-button > svg {
- margin-left: 3px;
+  margin-left: 3px;
 }
 
 .nav-right-side > span,
 .nav-right-side > a {
   color: var(--dark-mode-text-color-muted);
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   margin-right: 20px;
   font-weight: 500;
 }
 
 .nav-right-side > a {
-display: flex;
-flex-direction: row;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav-right-side > a:first-of-type {
@@ -92,7 +92,7 @@ align-items: center;
 }
 
 .nav-right-side > a:first-of-type:hover {
-color: white;
+  color: white;
 }
 
 @media (max-width: 1200px) {
@@ -107,7 +107,6 @@ color: white;
   }
   .nav-inner {
     justify-content: end;
-    
   }
 
   #home-header > .container > .h-fill > .column {
@@ -116,5 +115,4 @@ color: white;
 }
 
 @media (max-width: 480px) {
-
 }

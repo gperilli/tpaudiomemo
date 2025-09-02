@@ -14,8 +14,6 @@
  *= require_self
  */
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -30,23 +28,19 @@
 
 */
 
-
 @font-face {
-  font-family: 'GlacialIndifference';
+  font-family: "GlacialIndifference";
   src: url("/GlacialIndifference-Regular.otf") format("opentype");
 }
-  
-  @font-face {
-    font-family: 'GlacialIndifferenceBold';
-    src: url("/GlacialIndifference-Bold.otf") format("opentype");
-  }
 
+@font-face {
+  font-family: "GlacialIndifferenceBold";
+  src: url("/GlacialIndifference-Bold.otf") format("opentype");
+}
 
 :root {
-
   --border-line: #808080;
   --border-line-width: 1px;
-
 
   --brand-cyan-darker: hsl(190, 100%, 40%);
 
@@ -61,7 +55,7 @@
   --danger-soft: hsla(17, 90%, 50%, 0.3);
 
   --background-medium-dark: hsl(231, 28%, 20%);
-  
+
   --color-primary: var(--tpamemo-yellow);
 
   --weight-bold: 700;
@@ -73,34 +67,26 @@
   --background-dark-two: #1f3347;
   --background-dark-three: #36597c;
 
-  --tpamemo-dark-orange: #D35400;
-  --tpamemo-medium-orange: #D68910;
-  --tpamemo-yellow: #D4AC0D;
+  --tpamemo-dark-orange: #d35400;
+  --tpamemo-medium-orange: #d68910;
+  --tpamemo-yellow: #d4ac0d;
 
-  --figure-background: var(--background-dark-three:);
+  --figure-background: var(--background-dark-three: );
 
-  --background-color: var(--background-dark); 
+  --background-color: var(--background-dark);
 
   --dark-mode-text-color: hsl(0 0% 93%); /* default dark mode text color */
   --dark-mode-text-color-muted: hsl(231 20% 85%);
   --input-grey-border: hsl(231 20% 65%);
   --dark-mode-grey-text: hsl(231 20% 60%);
-
 }
-
 
 @import "components/footer.css";
 @import "components/header.css";
-
-
 @import "home_page.css";
-
-
-
 
 hr {
   border-bottom: 1px solid #ddd;
-
 }
 
 .bg-primary {
@@ -115,14 +101,18 @@ hr {
 .h1 {
   font-size: clamp(3rem, 6.8vw, 7rem);
   line-height: 1;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: var(--weight-bold);
   color: var(--tpamemo-yellow);
 }
 
 .h2-smaller {
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: var(--weight-bold);
 }
 
@@ -130,25 +120,32 @@ p {
   color: var(--dark-mode-text-color);
 }
 
-
 .text-xl {
   font-size: 1.5rem !important;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 
 .text-l {
   font-size: 1.25rem !important;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 
 .text-m {
   font-size: 1rem !important;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 
 .text-s {
   font-size: 0.8rem !important;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 
 body {
@@ -173,12 +170,14 @@ body {
   background: var(--danger) !important;
   color: white;
   float: right;
-    font-size: 1rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: normal;
-    border-radius: 10px;
-    padding: 10px 15px;
-    cursor: pointer;
+  font-size: 1rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-weight: normal;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
 .action-button {
@@ -186,7 +185,9 @@ body {
   color: white;
   float: right;
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: bold;
   border-radius: 10px;
   padding: 10px 15px;
@@ -195,7 +196,10 @@ body {
 
 .sign-up-button {
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  margin-right: 20px;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  margin-right: 20px;
   font-weight: 500;
   margin-right: 0px !important;
   border: 2px solid var(--tpamemo-yellow);
@@ -212,7 +216,7 @@ body {
 .container {
   position: relative;
 
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 @media (max-width: 1200px) {
@@ -246,7 +250,6 @@ body {
     left: 0px;
   }
 }
-
 
 #app {
   display: flex;
@@ -294,16 +297,16 @@ body {
 }
 
 #app-nav-upper > #app-nav-upper__left-side > a {
-height: 2.6rem;
-width: 2.6rem;
-padding: 0.7rem;
-flex-shrink: 0;
-border-radius: 50%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin-right: 10px;
+  height: 2.6rem;
+  width: 2.6rem;
+  padding: 0.7rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
 }
 
 #app-nav-upper > #app-nav-upper__left-side > a > svg {
@@ -317,7 +320,9 @@ margin-right: 10px;
 
 #app-nav-upper > #app-nav-upper__left-side > h1 {
   font-size: 2rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: 700;
   max-width: 1600px;
   color: var(--tpamemo-dark-orange);
@@ -340,7 +345,6 @@ margin-right: 10px;
   align-items: center;
   position: relative;
 }
-
 
 .hamburger {
   display: none;
@@ -374,7 +378,7 @@ margin-right: 10px;
   background-color: white;
 }
 
-.hamburger.active > div >.bar:nth-child(2) {
+.hamburger.active > div > .bar:nth-child(2) {
   opacity: 0;
 }
 
@@ -392,17 +396,20 @@ margin-right: 10px;
   display: none !important;
 }
 
-#app-nav-upper > #app-nav-upper__right-side > .user-actions-button-container > ul {
+#app-nav-upper
+  > #app-nav-upper__right-side
+  > .user-actions-button-container
+  > ul {
   margin: auto;
   top: calc(1.1rem + 20px + 17px);
   position: absolute;
   background-color: #fff;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 5px;
   text-align: center;
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: start;
   outline: var(--border-line-width) solid var(--border-line);
@@ -417,7 +424,9 @@ display: flex;
 
 #app-nav-upper > #app-nav-upper__right-side > div > ul > li > a {
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
   padding: 6px 10px;
   text-align: left;
@@ -441,7 +450,9 @@ display: flex;
   background: transparent;
   color: var(--light-mode-text-color-secondary-muted);
   font-size: 1.1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
   padding: 5px 10px;
   padding-right: 15px;
@@ -456,10 +467,9 @@ display: flex;
   padding: 5px;
   border-radius: 50%;
   width: 2rem;
-  height: 2rem; 
+  height: 2rem;
   background: var(--light-mode-text-background-color-secondary-muted);
 }
-
 
 #app-nav-upper > #app-nav-upper__right-side > button:hover {
   background: var(--light-mode-text-background-color-secondary-muted);
@@ -476,7 +486,7 @@ display: flex;
   align-items: start;
   justify-content: center;
   width: 100%;
-  min-height: 100vh; 
+  min-height: 100vh;
   flex-grow: 1;
 }
 
@@ -505,14 +515,14 @@ display: flex;
 
   .app-nav-upper-burger-container {
     position: fixed;
-  width: 100%;
-  height: 4.5rem;
-  padding: 0px 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  z-index: 50;
+    width: 100%;
+    height: 4.5rem;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    z-index: 50;
   }
 }
 
@@ -524,10 +534,9 @@ display: flex;
   }
 }
 
-
 .column--app > .app-container {
   padding-top: 4.5rem;
-  padding-left: 350px; 
+  padding-left: 350px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -570,10 +579,12 @@ display: flex;
   flex-direction: column;
 }
 
-.app-inner > .app-header > h1, 
+.app-inner > .app-header > h1,
 .app-inner > .app-header--account > div > h1 {
   font-size: 2rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: 700;
   color: var(--light-mode-text-color);
 }
@@ -582,7 +593,9 @@ display: flex;
 .app-inner > .app-header--account > div > p {
   color: var(--light-mode-text-color-secondary-muted);
   font-size: 1.1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
 }
 
@@ -595,7 +608,7 @@ display: flex;
   background: white;
   border-radius: 15px;
   padding: 20px;
-  margin-top: 20px;  
+  margin-top: 20px;
 }
 
 .sessions-date-container {
@@ -607,14 +620,13 @@ display: flex;
 .sessions-date-container > span {
   color: var(--light-mode-text-color-secondary-muted);
   font-size: 0.9rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: bold;
 }
 
-
-
 @media (max-width: 1200px) {
-  
 }
 
 @media (max-width: 1024px) {
@@ -641,65 +653,55 @@ display: flex;
   .hamburger {
     display: block;
   }
-  
 }
 
 @media (max-width: 480px) {
-  
 }
 
+.column {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0px 20px;
+}
 
-
-  .column {
-    margin: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-    padding: 0px 20px;
-  }
-
-  
-
-
-
-  .memos-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: auto; /* Each row will take up an equal fraction of the available space */
-    grid-gap: 16px; /* Adjust grid gap as needed */
-    grid-row-gap: 16px; /* Adjust vertical gap between rows */
-    overflow: visible; /* Adjust overflow behavior as needed */
-    align-items: start; /* Align items to the start of each row */
-    align-content: stretch; /* Stretch items to fill the entire row height */
-    
+.memos-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto; /* Each row will take up an equal fraction of the available space */
+  grid-gap: 16px; /* Adjust grid gap as needed */
+  grid-row-gap: 16px; /* Adjust vertical gap between rows */
+  overflow: visible; /* Adjust overflow behavior as needed */
+  align-items: start; /* Align items to the start of each row */
+  align-content: stretch; /* Stretch items to fill the entire row height */
 }
 
 .app-inner > div > p {
   color: var(--light-mode-text-color-secondary-muted);
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
-
 }
 
 .memos-container .memo {
-     /* Stretch each item to fill the height of its row */
-    position: relative;
-display: flex;
-flex-direction: column;
-background: white;
-    border: 1px solid var(--tpamemo-dark-orange);
-    border-radius: 15px;
+  /* Stretch each item to fill the height of its row */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1px solid var(--tpamemo-dark-orange);
+  border-radius: 15px;
 }
-
 
 @media (max-width: 768px) {
   .memos-container {
     grid-template-columns: 1fr;
   }
 }
-
 
 .memo-item {
   position: relative; /* Required for absolute positioning of buttons */
@@ -714,7 +716,12 @@ background: white;
   justify-content: space-between; /* Aligns buttons to the end of the memo-item */
   align-items: center; /* Centers items vertically */
   padding: 10px 0px 0px 0px; /* Adjust padding as needed */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for visibility */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background for visibility */
   border-radius: 5px;
 }
 
@@ -722,12 +729,11 @@ background: white;
   justify-content: flex-end;
 }
 
-
 .memo-control-buttons > button,
 .memo-control-buttons > div > button {
   border: none;
   background: transparent;
-  position: relative; 
+  position: relative;
   margin-left: 5px;
 }
 
@@ -739,12 +745,11 @@ background: white;
   color: rgb(50, 50, 50);
 }
 
-
-.memo-control-buttons > button.unbookmarked > svg > .bookmarker  {
+.memo-control-buttons > button.unbookmarked > svg > .bookmarker {
   fill: none;
 }
 
-.memo-control-buttons > button.bookmarked > svg > .bookmarker  {
+.memo-control-buttons > button.bookmarked > svg > .bookmarker {
   fill: rgb(50, 50, 50);
 }
 
@@ -752,18 +757,17 @@ background: white;
 .memo-control-buttons > div > button > svg {
   width: 24px; /* Adjust SVG icon size as needed */
   height: 24px;
-   /* Adjust spacing between icons */
+  /* Adjust spacing between icons */
   cursor: pointer;
 }
 
 .memo-control-buttons > button > div,
 .memo-control-buttons > div > button > div {
-  position: absolute; 
-  width: 100%; 
-  height: 100%; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0px;
 }
-
 
 /* audio files */
 /* Play/Pause Button */
@@ -781,7 +785,7 @@ background: white;
   width: 3em;
   border-radius: 50%;
   cursor: pointer;
-  vertical-align:bottom;
+  vertical-align: bottom;
 }
 
 .as-play-button__svg {
@@ -801,19 +805,19 @@ background: white;
   fill: #6b7574;
   display: none;
 }
-.as-play-button svg:hover .as-play-button__pause-bars{
+.as-play-button svg:hover .as-play-button__pause-bars {
   fill: #fff;
 }
 
 .as-play-button__triangle {
   fill: #6b7574;
   stroke: #6b7574;
-  stroke-width:17;
-  stroke-linejoin:round;
+  stroke-width: 17;
+  stroke-linejoin: round;
 }
-.as-play-button svg:hover .as-play-button__triangle{
-  fill:#fff;
-  stroke:#fff;
+.as-play-button svg:hover .as-play-button__triangle {
+  fill: #fff;
+  stroke: #fff;
 }
 
 .as-waveform {
@@ -823,29 +827,19 @@ background: white;
   height: 3rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .account-grey-button,
 .account-reset-button {
   float: right;
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
   border-radius: 10px;
   padding: 10px 15px;
   cursor: pointer;
 }
-  
+
 .account-grey-button {
   background: var(--tpamemo-yellow);
 }
@@ -859,13 +853,12 @@ background: white;
   color: rgba(255, 255, 255, 0.8);
 }
 
-
 .app-cards--account {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-  
+
 .app-cards--account > svg {
   height: 2.1rem;
   width: 2.1rem;
@@ -879,7 +872,6 @@ background: white;
   fill: var(--tpamemo-medium-orange);
   stroke: var(--tpamemo-medium-orange);
 }
-
 
 .app-cards--account > div {
   display: flex;
@@ -903,7 +895,9 @@ background: white;
 .app-cards > h3,
 .app-cards--account > div > .text-container > h3 {
   font-size: 1.1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: bold;
   color: var(--light-mode-text-color);
 }
@@ -911,17 +905,17 @@ background: white;
 .app-cards--account > div > .text-container > p {
   color: var(--light-mode-text-color-secondary-muted);
   font-size: 0.8rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
-} 
-
-
-  
-
+}
 
 #resetmodal-text-container > div > h1 {
   font-size: 1.1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: bold;
   color: var(--light-mode-text-color);
 }
@@ -929,7 +923,9 @@ background: white;
 #resetmodal-text-container > div > p {
   margin-top: 20px;
   font-size: 1.1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
   color: var(--light-mode-text-color);
 }
@@ -939,7 +935,7 @@ background: white;
   flex-direction: column;
   width: 800px;
 }
-  
+
 #resetmodal > .modal-inner > #resetmodal-inner {
   display: flex;
   flex-direction: column;
@@ -961,7 +957,7 @@ background: white;
 
 #resetmodal-text-container > div {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
@@ -974,7 +970,6 @@ background: white;
 #resetmodal-buttons-container > button {
   margin-left: 15px;
 }
-
 
 #profilemodal > .modal-inner > #profilemodal-inner {
   display: flex;
@@ -995,7 +990,6 @@ background: white;
   margin-right: 20px;
   background: var(--light-mode-grey-button-background);
   flex-shrink: 0;
- 
 }
 
 #profilemodal > .modal-inner > #profilemodal-inner > div > svg {
@@ -1016,7 +1010,7 @@ background: white;
 
 #emailmodal > .modal-inner > form > .field,
 #passwordmodal > .modal-inner > form > .field,
-#profilemodal > .modal-inner > #profilemodal-inner > form > .field   {
+#profilemodal > .modal-inner > #profilemodal-inner > form > .field {
   display: flex;
   flex-direction: column;
 }
@@ -1028,7 +1022,7 @@ background: white;
 #voicemail-submit-form > div > div > div > textarea {
   border-radius: 10px;
   background: white;
-  outline: 1px solid rgba(0,0,0,0.25);
+  outline: 1px solid rgba(0, 0, 0, 0.25);
   border: none;
 }
 
@@ -1037,14 +1031,20 @@ background: white;
 #profilemodal > .modal-inner > #profilemodal-inner > form > .field > label {
   font-size: 0.8rem;
   font-weight: 600;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   color: var(--tpamemo-medium-orange);
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #emailmodal > .modal-inner > form > input[type="submit"],
 #passwordmodal > .modal-inner > form > input[type="submit"],
-#profilemodal > .modal-inner > #profilemodal-inner > form > input[type="submit"] {
+#profilemodal
+  > .modal-inner
+  > #profilemodal-inner
+  > form
+  > input[type="submit"] {
   background: var(--tpamemo-yellow);
   padding: 15px;
   color: white;
@@ -1057,22 +1057,28 @@ background: white;
 #profilemodal > .modal-inner > #profilemodal-inner > form > .field,
 #emailmodal > .modal-inner > form > input[type="submit"],
 #passwordmodal > .modal-inner > form > input[type="submit"],
-#profilemodal > .modal-inner > #profilemodal-inner > form > input[type="submit"] {
+#profilemodal
+  > .modal-inner
+  > #profilemodal-inner
+  > form
+  > input[type="submit"] {
   margin-top: 30px;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
-#profilemodal > .modal-inner > #profilemodal-inner > form > .field:first-of-type {
+#profilemodal
+  > .modal-inner
+  > #profilemodal-inner
+  > form
+  > .field:first-of-type {
   margin-top: 0px;
 }
-  
-@media (max-width: 1200px) {
 
+@media (max-width: 1200px) {
 }
 
 @media (max-width: 1024px) {
-
 }
 
 @media (max-width: 768px) {
@@ -1098,14 +1104,10 @@ background: white;
 }
 
 @media (max-width: 480px) {
-  
 }
 
-
-
-
 #ui-underlay {
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   display: none;
   left: 0px;
   height: 100vh;
@@ -1113,7 +1115,7 @@ background: white;
   position: fixed;
   z-index: 40;
 }
-  
+
 .modal-container {
   position: fixed;
   width: 100%;
@@ -1134,7 +1136,7 @@ background: white;
 .modal {
   background: #fff;
   border-radius: 15px;
-  
+
   margin-top: 50px;
   max-height: calc(100vh - 100px);
   margin-left: auto;
@@ -1150,7 +1152,6 @@ background: white;
   flex-direction: column;
   position: relative;
 }
-
 
 .modal-inner::-webkit-scrollbar {
   width: 10px; /* Width of the scrollbar */
@@ -1176,8 +1177,6 @@ background: white;
   scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar thumb and track */
 }
 
-
-
 .modal--standard {
   width: 500px;
 }
@@ -1186,7 +1185,7 @@ background: white;
   width: 800px;
 }
 
-.modal--wide  > .profilemodal-inner {
+.modal--wide > .profilemodal-inner {
   padding: 5px;
 }
 
@@ -1225,24 +1224,24 @@ background: white;
 
 .modal > .modal-header > h1 {
   font-size: 1.1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: bold;
   color: var(--light-mode-text-color);
 }
 
-  
-@media (max-width: 1200px) {  
+@media (max-width: 1200px) {
 }
-  
+
 @media (max-width: 1024px) {
 }
-  
+
 @media (max-width: 768px) {
   .modal {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     max-height: calc(100vh - 50px);
-
   }
   .modal--standard {
     width: 100%;
@@ -1255,9 +1254,8 @@ background: white;
   }
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
 }
-
 
 .new-memo-button-container {
   display: flex;
@@ -1271,7 +1269,9 @@ background: white;
   align-items: center;
   float: right;
   font-size: 1rem;
-  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-weight: normal;
   border-radius: 10px;
   padding: 10px 15px;
@@ -1282,14 +1282,6 @@ background: white;
 .new-memo-button-container > button > svg {
   margin-right: 10px;
 }
-
-
-
-
-
-
-
-
 
 .microphone-status.active {
   color: green;
@@ -1309,18 +1301,16 @@ background: white;
   animation: 3s linear infinite recordingtextflash;
 }
 
-
 .recording-output-overlay {
-  width: 100%; 
-  height: 100%; 
-  position: absolute; 
-  background-color: rgba(255, 255, 255, 0.3);    
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .recording-output-overlay.overlayed {
   z-index: 100;
 }
-
 
 .recording-output-overlay.reveal {
   animation: 1s linear fadeIn;
@@ -1331,13 +1321,10 @@ background: white;
   height: 100%;
 }
 
-
-
 .tpamemos-medbutton {
   background: var(--tpamemo-yellow);
   padding: 15px;
   color: white;
-
   border-radius: 15px;
   flex-shrink: 0;
 }
@@ -1353,7 +1340,6 @@ background: white;
 .button-stoprecord {
   background: var(--tpamemo-yellow);
 }
-
 
 .calleo-button-pink {
   background: var(--calleo-button-pink);

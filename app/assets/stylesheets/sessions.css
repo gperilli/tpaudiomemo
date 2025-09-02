@@ -1,199 +1,201 @@
 .sessions {
-    background-color: var(--background-dark-one);
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-  }
-    
-  .sessions-container {
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;
-    padding: 2.5rem 20px 3.5rem 20px;
-    flex-grow: 0;
-    flex-shrink: 1;
-    min-width: 500px;
-    display: inline-block;
-    margin-right: auto;
-    margin-left: auto;
-  }
-    
-  .sessions-container > h1 {
-    font-size: 2rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 700;
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .sessions-container > a {
-    position: relative;
-    
-  }
-  
-  .sessions-container > a:hover {
-    text-decoration: none;
-  }
-  
-  .sessions-container > a > h2 {
-    font-size: 2rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-weight: 700;
-    color: white;
-    margin-bottom: 40px;
-  }
-  
-  .sessions-container > form > .field {
-    margin-bottom: 40px;
-  }
-  
-  .sessions-container > form > .field > div {
-    position: relative;
-    float: left;
-    width: 100%;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .sessions-container > form > .field > div > em,
-  .sessions-container > form > .field > div > a {
-    margin-left: 10px;
-  }
-  
-  
-  .sessions-container > form > .field > div > label,
-  .sessions-container > form > .field > div > em,
-  .sessions-container > form > .field > div > a {
-    font-size: 0.8rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: var(--dark-mode-text-color-muted);
-  }
-  
-  
-  .sessions-container > form > .field > div > a {
-    float: right;
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: var(--tpamemo-dark-orange);
-  }
-  
-  .sessions-container > form > .field > div > a:hover {
-    text-decoration: underline;
-  }
-  
-  .sessions-container > form > .field > div > label {
-    float: left;
-  }
-  
-  .sessions-container > form > .field > input:-webkit-autofill,
-  .sessions-container > form > .field > input:-webkit-autofill:hover,
-  .sessions-container > form > .field > input:-webkit-autofill:focus,
-  .sessions-container > form > .field > input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 1ms;
-  }
-  
-  .sessions-container > form > .actions > input[type="submit"] {
-    background-color: var(--tpamemo-dark-orange);
-    font-size: 1.1rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: var(--barnd-darker);
-    width: 100%;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 30px;
-  } 
-    
-  .sessions-container > form > .actions > input[type="submit"]:hover {
-    background: var(--tpamemo-medium-orange);
-    cursor: pointer;
-  }
-  
-  .sessions-container > #sign-up-container {
-    background-color: var(--brand-darker);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    border-radius: 10px;
-    padding: 15px;
-    color: var(--barnd-cyan)
-  }
-  
-  .sessions-container > .suggest-sign-upin-container > span {
-    font-size: 1rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: var(--dark-mode-text-color-muted);
-    margin-right: 0.5rem;
-  }
-  
-  
-  .sessions-container > .suggest-sign-upin-container > a {
-    font-size: 1rem;
-    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: var(--tpamemo-yellow);
-  }
-  
-  .sessions-container > .suggest-sign-upin-container > a:hover {
+  background-color: var(--background-dark-one);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.sessions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 20px 3.5rem 20px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-width: 500px;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.sessions-container > h1 {
+  font-size: 2rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.sessions-container > a {
+  position: relative;
+}
+
+.sessions-container > a:hover {
+  text-decoration: none;
+}
+
+.sessions-container > a > h2 {
+  font-size: 2rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-weight: 700;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.sessions-container > form > .field {
+  margin-bottom: 40px;
+}
+
+.sessions-container > form > .field > div {
+  position: relative;
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sessions-container > form > .field > div > em,
+.sessions-container > form > .field > div > a {
+  margin-left: 10px;
+}
+
+.sessions-container > form > .field > div > label,
+.sessions-container > form > .field > div > em,
+.sessions-container > form > .field > div > a {
+  font-size: 0.8rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  color: var(--dark-mode-text-color-muted);
+}
+
+.sessions-container > form > .field > div > a {
+  float: right;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--tpamemo-dark-orange);
+}
+
+.sessions-container > form > .field > div > a:hover {
   text-decoration: underline;
-  }
-  
-  
-  .sessions-container > form > .field > input:-webkit-autofill {
-    -webkit-text-fill-color: white; /* Set the text color to white */
-    font-size: 16px !important;
-    font-size: inherit;
-  }
-    
-    
-  .sessions-container > form > .field > input[type="email"],
-  .sessions-container > form > .field > input[type="password"],
-  .sessions-container > form > .field > input[type="text"] {
-    -webkit-appearance: none;
-    -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    font: inherit;
-    text-align: left;
-    display: inline-flex;
-    align-items: center;
-    vertical-align: middle;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    caret-color: white;
+}
+
+.sessions-container > form > .field > div > label {
+  float: left;
+}
+
+.sessions-container > form > .field > input:-webkit-autofill,
+.sessions-container > form > .field > input:-webkit-autofill:hover,
+.sessions-container > form > .field > input:-webkit-autofill:focus,
+.sessions-container > form > .field > input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 1ms;
+}
+
+.sessions-container > form > .actions > input[type="submit"] {
+  background-color: var(--tpamemo-dark-orange);
+  font-size: 1.1rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  color: var(--barnd-darker);
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.sessions-container > form > .actions > input[type="submit"]:hover {
+  background: var(--tpamemo-medium-orange);
+  cursor: pointer;
+}
+
+.sessions-container > #sign-up-container {
+  background-color: var(--brand-darker);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  color: var(--barnd-cyan);
+}
+
+.sessions-container > .suggest-sign-upin-container > span {
+  font-size: 1rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  color: var(--dark-mode-text-color-muted);
+  margin-right: 0.5rem;
+}
+
+.sessions-container > .suggest-sign-upin-container > a {
+  font-size: 1rem;
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  color: var(--tpamemo-yellow);
+}
+
+.sessions-container > .suggest-sign-upin-container > a:hover {
+  text-decoration: underline;
+}
+
+.sessions-container > form > .field > input:-webkit-autofill {
+  -webkit-text-fill-color: white; /* Set the text color to white */
+  font-size: 16px !important;
+  font-size: inherit;
+}
+
+.sessions-container > form > .field > input[type="email"],
+.sessions-container > form > .field > input[type="password"],
+.sessions-container > form > .field > input[type="text"] {
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font: inherit;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  caret-color: white;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  outline: 1px solid var(--input-grey-border);
+  border: none;
+  background-color: transparent;
+  transition: background-color 5000s ease-in-out 1ms;
+}
+
+.sessions-container > form > .field > input[type="email"]:focus,
+.sessions-container > form > .field > input[type="password"]:focus,
+.sessions-container > form > .field > input[type="text"]:focus {
+  outline: 2px solid var(--brand-cyan);
+  background-color: red;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .sessions-container {
     width: 100%;
-    border-radius: 10px;
-    color: white;
-    outline: none;
-    outline: 1px solid var(--input-grey-border);
-    border: none;
-    background-color: transparent;
-    transition: background-color 5000s ease-in-out 1ms;
-    
+    min-width: 100%;
   }
-    
-  .sessions-container > form > .field > input[type="email"]:focus,
-  .sessions-container > form > .field > input[type="password"]:focus,
-  .sessions-container > form > .field > input[type="text"]:focus {
-    outline: 2px solid var(--brand-cyan);
-    background-color: red;
-  }
-    
-  @media (max-width: 1200px) {
-    
-  }
-  
-  @media (max-width: 1024px) {
-    
-  }
-  
-  @media (max-width: 768px) {
-    .sessions-container {
-      width: 100%;
-      min-width: 100%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    
-  }
+}
+
+@media (max-width: 480px) {
+}
